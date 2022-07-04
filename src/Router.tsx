@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import Error404 from "./Error404";
 import HyeEun from "./HyeEun";
 import JiYeong from "./JiYeong";
+import Main from "./Main";
 import NaYeon from "./NaYeon";
-import Error404 from "./pages/Error404";
-import Main from "./pages/Main";
 
 export default function Router() {
   return (
