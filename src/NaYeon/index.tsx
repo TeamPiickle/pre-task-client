@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import SingleSlide from "./components/single";
+import MultipleSlide from "./components/multiple";
 
 export default function index() {
   return (
     <St.Section>
-      <SingleSlide />
+      <MultipleSlide />
     </St.Section>
   );
 }

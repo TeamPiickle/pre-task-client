@@ -1,22 +1,27 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../style/multiple.css";
 
 import React, { Component } from "react";
 import Slider from "react-slick";
+import styled from "styled-components";
 
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
+      slide: "div",
       dots: false,
       infinite: false,
-      speed: 500,
-      slidesToShow: 1,
+      speed: 200,
+      slidesToShow: 3.5,
       slidesToScroll: 1,
       arrows: true,
+      //prevArrow: "<button type='button' class='slick-next'>Next</button>",
+      //nextArrow: "<button type='button' class='slick-prev'>Prev</button>",
     };
     return (
-      <div>
-        <h2> Single Item</h2>
+      <St.MultipleSlider>
+        <St.Title> ⭐ 서울 야경 명소 ⭐ </St.Title>
         <Slider {...settings}>
           <div>
             <img
@@ -55,7 +60,19 @@ export default class SimpleSlider extends Component {
             />
           </div>
         </Slider>
-      </div>
+      </St.MultipleSlider>
     );
   }
 }
+
+const St = {
+  MultipleSlider: styled.section`
+    text-align: center;
+  `,
+  Title: styled.h1`
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin: 3rem;
+  `,
+};
