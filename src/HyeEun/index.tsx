@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import SarangHyeeun from "../asset/SarangHyeeun.png";
+import SarangHyeeun from "../asset/images/SarangHyeeun.png";
 import ActionButtons from "./components/ActionButtons";
 import Header from "./components/Header";
 import Survey from "./components/Survey";
@@ -22,7 +22,7 @@ export default function index() {
 }
 
 const St = {
-  Root: styled.main`
+  Root: styled.div`
     font-size: 62.5%;
     width: 85.2rem;
     height: auto;
@@ -39,5 +39,5 @@ const St = {
     background-color: white;
     margin-right: 1.6rem;
   `,
-  MainWrapper: styled.span``,
+  MainWrapper: styled.main``,
 };
