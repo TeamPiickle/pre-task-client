@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+}
+
+
+.slick-slide {
+  height: 350px;
+  border: 20px solid black;
+  box-sizing: border-box;
+}
+
+.slick-slide img {
+  object-fit: cover;
+  height: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
