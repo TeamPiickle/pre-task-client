@@ -8,7 +8,7 @@ export const UserProfileContainer = styled.header`
 export const ProfileImage = styled.article`
   height: 100px;
   width: 100px;
-  background-color: black;
+  background-color: #ffcdd2;
   border-radius: 50px;
 `;
 export const ProfileText = styled.article`
