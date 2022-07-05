@@ -20,12 +20,23 @@ export const OptionListContainer = styled.ul`
   padding: 20px;
   margin: 20px;
 `;
-export const OptionListContent = styled.li`
+export const OptionListContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const OptionContentWrapper = styled.li`
+  display: flex;
+  justify-content: space-between;
   border: solid 1px black;
   height: 100px;
   margin: 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  &:hover {
+    border: solid 3px #ffcdd2;
+  }
+  background-color: ${(props) => props.color || "white"};
 `;
 export const OptionListMark = styled.span`
   margin-right: 20px;
@@ -36,6 +47,6 @@ export const OptionListText = styled.strong`
   font-size: 30px;
 `;
 export const VotedPercent = styled.div`
-  margin-right: 0px;
+  margin-right: 20px;
   font-size: 20px;
 `;
