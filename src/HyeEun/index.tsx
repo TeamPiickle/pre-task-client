@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import SarangHyeeun from "../asset/SarangHyeeun.png";
-import Actions from "./components/Actions";
+import ActionButtons from "./components/ActionButtons";
 import Header from "./components/Header";
 import Survey from "./components/Survey";
 import theme from "./style";
@@ -15,7 +15,7 @@ export default function index() {
       <St.MainWrapper>
         <Header />
         <Survey />
-        <Actions />
+        <ActionButtons />
       </St.MainWrapper>
     </St.Root>
   );
