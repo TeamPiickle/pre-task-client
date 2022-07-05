@@ -16,17 +16,17 @@ export default function VoteButton(props: GirlProps) {
       <input type="radio" name="girls" id={id} />
       <label htmlFor={id}>
         <span></span>
-        {girlName}
+        <div>{girlName}</div>
       </label>
     </St.VoteButton>
   );
 }
 
 const St = {
-  VoteButton: styled.p`
+  VoteButton: styled.article`
     ${theme.fonts.large}
     color: ${theme.colors.black};
-
+    margin-bottom: 1.5rem;
     input {
       display: none;
     }
@@ -46,6 +46,12 @@ const St = {
       gap: 1rem;
       width: 69.6rem;
       height: 3.8rem;
+    }
+    div {
+      width: 100%;
+      border: 1px solid ${theme.colors.gray3};
+      border-radius: 0.4rem;
+      padding: 1rem;
     }
   `,
 };
