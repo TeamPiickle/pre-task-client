@@ -7,7 +7,7 @@ type ActionButtonProps = {
 };
 
 export default function ActionButton({ children }: ActionButtonProps) {
-  return <St.ActionButton>{children}</St.ActionButton>;
+  return <St.ActionButton type="button">{children}</St.ActionButton>;
 }
 
 const St = {

@@ -5,13 +5,13 @@ import checked from "../../../asset/icons/checked.png";
 import unchecked from "../../../asset/icons/unchecked.png";
 import theme from "../../style";
 
-interface GirlProps {
+interface VoteButtonProps {
   id: string;
   girlName: string;
   votersNum: number;
 }
 
-export default function VoteButton(props: GirlProps) {
+export default function VoteButton(props: VoteButtonProps) {
   const { id, girlName, votersNum } = props;
   const [myVotes, setMyVotes] = useState<number>(votersNum);
 
@@ -22,13 +22,13 @@ export default function VoteButton(props: GirlProps) {
   return (
     <St.VoteButton>
       <input type="radio" name="girls" id={id} onClick={handleVotersNum} />
-      <label htmlFor={id}>
+      <St.Label htmlFor={id}>
         <span></span>
         <St.Infomation>
           {girlName}
           <p>{myVotes}명</p>
         </St.Infomation>
-      </label>
+      </St.Label>
     </St.VoteButton>
   );
 }
@@ -51,13 +51,14 @@ const St = {
     input:checked + label span {
       background: url(${checked});
     }
-    label {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      width: 69.6rem;
-      height: 3.8rem;
-    }
+  `,
+
+  Label: styled.label`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 69.6rem;
+    height: 3.8rem;
   `,
 
   Infomation: styled.div`

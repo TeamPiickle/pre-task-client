@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import girls from "../core/Girls";
+import girls from "../core/girls";
 import VoteButton from "./common/VoteButton";
 
 interface Girl {

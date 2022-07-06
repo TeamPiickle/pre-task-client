@@ -6,8 +6,8 @@ export default function Header() {
   return (
     <St.Header>
       <St.InfomationWrapper>
-        <strong>헤롱해랑사</strong>
-        <p>4일 전</p>
+        <St.NicknameInfo>헤롱해랑사</St.NicknameInfo>
+        <St.DateInfo>4일 전</St.DateInfo>
       </St.InfomationWrapper>
       <St.Content>
         혜은이랑 가장 닮았다고 생각하는 사람은 누구 ??
@@ -29,15 +29,15 @@ const St = {
     display: flex;
     gap: 0.8rem;
     margin-bottom: 0.2rem;
-    strong {
-      ${theme.fonts.medium}
-      color: ${theme.colors.black};
-    }
+  `,
+  NicknameInfo: styled.strong`
+    ${theme.fonts.medium}
+    color: ${theme.colors.black};
+  `,
 
-    p {
-      ${theme.fonts.small}
-      color: ${theme.colors.gray3};
-    }
+  DateInfo: styled.p`
+    ${theme.fonts.small}
+    color: ${theme.colors.gray3};
   `,
 
   Content: styled.p`
