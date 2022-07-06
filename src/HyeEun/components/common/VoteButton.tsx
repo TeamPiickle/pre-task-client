@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import checked from "../../../asset/icons/checked.png";
@@ -12,14 +13,20 @@ interface GirlProps {
 
 export default function VoteButton(props: GirlProps) {
   const { id, girlName, votersNum } = props;
+  const [myVotes, setMyVotes] = useState<number>(votersNum);
+
+  const handleVotersNum = () => {
+    setMyVotes(myVotes + 1);
+  };
+
   return (
     <St.VoteButton>
-      <input type="radio" name="girls" id={id} />
+      <input type="radio" name="girls" id={id} onClick={handleVotersNum} />
       <label htmlFor={id}>
         <span></span>
         <St.Infomation>
           {girlName}
-          <p>{votersNum}명</p>
+          <p>{myVotes}명</p>
         </St.Infomation>
       </label>
     </St.VoteButton>
