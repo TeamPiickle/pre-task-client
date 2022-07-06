@@ -17,4 +17,10 @@ export const St = {
 
     background-color: ${({ isactive }) => (isactive ? "#afafaf" : "transparent")};
   `,
+
+  SubmitBtn: styled.button`
+    border: 0.5rem solid #eeeeee;
+
+    font-size: 3rem;
+  `,
 };

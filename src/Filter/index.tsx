@@ -66,6 +66,7 @@ export default function Filter() {
           </St.FilterTag>
         ))}
       </St.FilterTagsWrapper>
+      <St.SubmitBtn onClick={() => window.alert([...checkedTags])}>제출하기</St.SubmitBtn>
     </section>
   );
 }
