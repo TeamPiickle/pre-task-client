@@ -13,7 +13,7 @@ export default function VoteContents(): JSX.Element {
   );
   const [voterSum, setVoterSum] = useState(sumOfVoter); //투표자 전체 수.
   const [votedNum, setVotedNum] = useState(candidateArr); //선지를 담은 객체배열.
-  const [isVoted, setISVoted] = useState(false); //투표한 상태인지 안한상태인지 판단.
+  const [isVoted, setIsVoted] = useState(false); //투표한 상태인지 안한상태인지 판단.
   const [currentCandidate, setCurrentCandidate] = useState(0); //현재 클릭했던 보기의 index를 기억.
 
   const showResult = (key: number) => {
@@ -23,13 +23,13 @@ export default function VoteContents(): JSX.Element {
       tempCanditate[key].votedNumber += 1;
       setVotedNum(tempCanditate);
       setVoterSum(voterSum + 1);
-      setISVoted(true);
+      setIsVoted(true);
       setCurrentCandidate(key);
       // isVoted가 true 일 때,
     } else {
       // 방금 클릭했던 걸 다시 클릭했다면 단순 클릭 취소처리.
-      setISVoted(false);
       if (currentCandidate === key) {
+        setIsVoted(false);
         const tempCanditate = [...votedNum];
         tempCanditate[key].votedNumber -= 1;
         setVotedNum(tempCanditate);
@@ -41,6 +41,7 @@ export default function VoteContents(): JSX.Element {
         tempCanditate[currentCandidate].votedNumber -= 1;
         tempCanditate[key].votedNumber += 1;
         setVotedNum(tempCanditate);
+        setCurrentCandidate(key);
       }
     }
   };
