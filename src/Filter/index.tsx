@@ -4,7 +4,7 @@ import { St } from "./style";
 
 type FilterTag = {
   id: string;
-  name: "남" | "여" | "10대" | "20대" | "30대";
+  name: string;
 };
 
 type FilterTags = {
@@ -40,6 +40,44 @@ const filterTags: FilterTags[] = [
       {
         id: "5",
         name: "30대",
+      },
+    ],
+  },
+  {
+    type: "술자리 유형",
+    tags: [
+      {
+        id: "6",
+        name: "개인",
+      },
+      {
+        id: "7",
+        name: "커플",
+      },
+      {
+        id: "8",
+        name: "친구",
+      },
+      {
+        id: "9",
+        name: "단체",
+      },
+    ],
+  },
+  {
+    type: "연령대",
+    tags: [
+      {
+        id: "10",
+        name: "반가워요",
+      },
+      {
+        id: "11",
+        name: "친군해요",
+      },
+      {
+        id: "12",
+        name: "가까워요",
       },
     ],
   },

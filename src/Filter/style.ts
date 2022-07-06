@@ -19,7 +19,7 @@ export const St = {
   `,
 
   SubmitBtn: styled.button`
-    border: 0.5rem solid #eeeeee;
+    border: 0.5rem solid red;
 
     font-size: 3rem;
   `,
