@@ -56,26 +56,17 @@ export default function VoteContents(): JSX.Element {
       <St.VoterCount>4.5천 명</St.VoterCount>
       <St.OptionListContainer>
         {candidateArr.map((candidate) => {
-          if (isVoted === false) {
-            return (
-              <St.OptionContentWrapper key={candidate.id} onClick={() => showResult(candidate.id)}>
-                <St.OptionListContent>
-                  <St.OptionListMark>○</St.OptionListMark>
-                  <St.OptionListText>{candidate.name}</St.OptionListText>
-                </St.OptionListContent>
-              </St.OptionContentWrapper>
-            );
-          } else {
-            return (
-              <St.OptionContentWrapper color="#ffcdd2" key={candidate.id} onClick={() => showResult(candidate.id)}>
-                <St.OptionListContent>
-                  <St.OptionListMark>○</St.OptionListMark>
-                  <St.OptionListText>{candidate.name}</St.OptionListText>
-                </St.OptionListContent>
+          return (
+            <St.OptionContentWrapper isactive={isVoted} key={candidate.id} onClick={() => showResult(candidate.id)}>
+              <St.OptionListContent>
+                <St.OptionListMark>○</St.OptionListMark>
+                <St.OptionListText>{candidate.name}</St.OptionListText>
+              </St.OptionListContent>
+              {isVoted === true && (
                 <St.VotedPercent>{Math.floor((candidate.votedNumber / voterSum) * 100)}%</St.VotedPercent>
-              </St.OptionContentWrapper>
-            );
-          }
+              )}
+            </St.OptionContentWrapper>
+          );
         })}
       </St.OptionListContainer>
     </St.VoteContentsContainer>
