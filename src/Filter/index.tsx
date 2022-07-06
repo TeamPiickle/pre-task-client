@@ -83,9 +83,13 @@ const filterTags: FilterTags[] = [
   },
 ];
 
+// 위의 객체는 단순 필터 정보 나열! "core 폴더로 빼 놓을 객체"
+// 여기부터 컴포넌트 !!!
 export default function Filter() {
+  // 체크한 태그들을 저장할 state
   const [checkedTags, setCheckedTags] = useState<Set<string>>(new Set());
 
+  // 태그를 눌렀을 때 함수, state 에 있으면 delete, 없으면 add 시켜서 setState
   const toggleTagButton = (_id: string) => {
     const tempCheckedTags = new Set([...checkedTags]);
     tempCheckedTags.has(_id) ? tempCheckedTags.delete(_id) : tempCheckedTags.add(_id);
