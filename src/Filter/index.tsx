@@ -1,17 +1,21 @@
+import { useState } from "react";
+
+import { St } from "./style";
+
 type FilterTag = {
-  id: number;
+  id: string;
   name: "남" | "여" | "10대" | "20대" | "30대";
   type: "성별" | "연령대";
 };
 
 const filterGenderTags: FilterTag[] = [
   {
-    id: 1,
+    id: "1",
     name: "남",
     type: "성별",
   },
   {
-    id: 2,
+    id: "2",
     name: "여",
     type: "성별",
   },
@@ -19,37 +23,49 @@ const filterGenderTags: FilterTag[] = [
 
 const filterAgeTags: FilterTag[] = [
   {
-    id: 3,
+    id: "3",
     name: "10대",
     type: "연령대",
   },
   {
-    id: 4,
+    id: "4",
     name: "20대",
     type: "연령대",
   },
   {
-    id: 5,
+    id: "5",
     name: "30대",
     type: "연령대",
   },
 ];
 
-export default function index() {
+export default function Filter() {
+  const [checkedTags, setCheckedTags] = useState<Set<string>>(new Set());
+
+  const toggleTagButton = (_id: string) => {
+    const tempCheckedTags = new Set([...checkedTags]);
+    tempCheckedTags.has(_id) ? tempCheckedTags.delete(_id) : tempCheckedTags.add(_id);
+    setCheckedTags(tempCheckedTags);
+  };
+
   return (
     <section>
-      <em>성별</em>
-      <ul>
+      <St.FilterTitle>성별</St.FilterTitle>
+      <St.FilterTagsWrapper>
         {filterGenderTags.map((tag) => (
-          <li key={tag.id}>{tag.name}</li>
+          <St.FilterTag key={tag.id} isactive={checkedTags.has(tag.id)} onClick={() => toggleTagButton(tag.id)}>
+            {tag.name}
+          </St.FilterTag>
         ))}
-      </ul>
-      <em>연령대</em>
-      <ul>
+      </St.FilterTagsWrapper>
+      <St.FilterTitle>연령대</St.FilterTitle>
+      <St.FilterTagsWrapper>
         {filterAgeTags.map((tag) => (
-          <li key={tag.id}>{tag.name}</li>
+          <St.FilterTag key={tag.id} isactive={checkedTags.has(tag.id)} onClick={() => toggleTagButton(tag.id)}>
+            {tag.name}
+          </St.FilterTag>
         ))}
-      </ul>
+      </St.FilterTagsWrapper>
     </section>
   );
 }
