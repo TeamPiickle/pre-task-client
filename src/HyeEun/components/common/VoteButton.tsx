@@ -7,16 +7,20 @@ import theme from "../../style";
 interface GirlProps {
   id: string;
   girlName: string;
+  votersNum: number;
 }
 
 export default function VoteButton(props: GirlProps) {
-  const { id, girlName } = props;
+  const { id, girlName, votersNum } = props;
   return (
     <St.VoteButton>
       <input type="radio" name="girls" id={id} />
       <label htmlFor={id}>
         <span></span>
-        <div>{girlName}</div>
+        <St.Infomation>
+          {girlName}
+          <p>{votersNum}명</p>
+        </St.Infomation>
       </label>
     </St.VoteButton>
   );
@@ -47,11 +51,15 @@ const St = {
       width: 69.6rem;
       height: 3.8rem;
     }
-    div {
-      width: 100%;
-      border: 1px solid ${theme.colors.gray3};
-      border-radius: 0.4rem;
-      padding: 1rem;
-    }
+  `,
+
+  Infomation: styled.div`
+    width: 100%;
+    border: 1px solid ${theme.colors.gray3};
+    border-radius: 0.4rem;
+    padding: 1rem;
+
+    display: flex;
+    gap: 0.8rem;
   `,
 };
