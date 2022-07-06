@@ -25,19 +25,24 @@ export const St = {
     display: flex;
     align-items: center;
   `,
-  OptionContentWrapper: styled.li`
+  OptionContentWrapper: styled.li<{ isactive: boolean }>`
     display: flex;
     justify-content: space-between;
+
     border: solid 1px black;
+
     height: 100px;
+
     margin: 10px;
+
     display: flex;
     align-items: center;
+
     cursor: pointer;
     &:hover {
       border: solid 3px #ffcdd2;
     }
-    background-color: ${(props) => props.color || "white"};
+    background-color: ${({ isactive }) => (isactive ? "#ffcdd2" : "white")};
   `,
   OptionListMark: styled.span`
     margin-right: 20px;
