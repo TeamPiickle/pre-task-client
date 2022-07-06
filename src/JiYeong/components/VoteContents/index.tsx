@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 
-import {
-  OptionContentWrapper,
-  OptionListContainer,
-  OptionListContent,
-  OptionListMark,
-  OptionListText,
-  VoteContentsContainer,
-  VoteDiscription,
-  VotedPercent,
-  VoterCount,
-} from "./style";
+import { St } from "./style";
 
 export default function VoteContents(): JSX.Element {
   const candidateArr: { id: number; name: string; votedNumber: number }[] = [
@@ -83,33 +73,33 @@ export default function VoteContents(): JSX.Element {
   };
 
   return (
-    <VoteContentsContainer>
-      <VoteDiscription>영상에 참고용 자료로 들어갈 예정이에요!</VoteDiscription>
-      <VoterCount>4.5천 명</VoterCount>
-      <OptionListContainer>
+    <St.VoteContentsContainer>
+      <St.VoteDiscription>영상에 참고용 자료로 들어갈 예정이에요!</St.VoteDiscription>
+      <St.VoterCount>4.5천 명</St.VoterCount>
+      <St.OptionListContainer>
         {candidateArr.map((candidate) => {
           if (isVoted === false) {
             return (
-              <OptionContentWrapper key={candidate.id} onClick={() => showResult(candidate.id)}>
-                <OptionListContent>
-                  <OptionListMark>○</OptionListMark>
-                  <OptionListText>{candidate.name}</OptionListText>
-                </OptionListContent>
-              </OptionContentWrapper>
+              <St.OptionContentWrapper key={candidate.id} onClick={() => showResult(candidate.id)}>
+                <St.OptionListContent>
+                  <St.OptionListMark>○</St.OptionListMark>
+                  <St.OptionListText>{candidate.name}</St.OptionListText>
+                </St.OptionListContent>
+              </St.OptionContentWrapper>
             );
           } else {
             return (
-              <OptionContentWrapper color="#ffcdd2" key={candidate.id} onClick={() => showResult(candidate.id)}>
-                <OptionListContent>
-                  <OptionListMark>○</OptionListMark>
-                  <OptionListText>{candidate.name}</OptionListText>
-                </OptionListContent>
-                <VotedPercent>{Math.floor((candidate.votedNumber / voterSum) * 100)}%</VotedPercent>
-              </OptionContentWrapper>
+              <St.OptionContentWrapper color="#ffcdd2" key={candidate.id} onClick={() => showResult(candidate.id)}>
+                <St.OptionListContent>
+                  <St.OptionListMark>○</St.OptionListMark>
+                  <St.OptionListText>{candidate.name}</St.OptionListText>
+                </St.OptionListContent>
+                <St.VotedPercent>{Math.floor((candidate.votedNumber / voterSum) * 100)}%</St.VotedPercent>
+              </St.OptionContentWrapper>
             );
           }
         })}
-      </OptionListContainer>
-    </VoteContentsContainer>
+      </St.OptionListContainer>
+    </St.VoteContentsContainer>
   );
 }
