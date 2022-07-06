@@ -1,6 +1,5 @@
-import styled from "styled-components";
-
 import MultipleSlide from "./components/multiple";
+import { St } from "./style";
 
 export default function index() {
   return (
@@ -9,6 +8,3 @@ export default function index() {
     </St.Section>
   );
 }
-const St = {
-  Section: styled.section``,
-};
