@@ -55,9 +55,12 @@ export default function VoteContents(): JSX.Element {
       <St.VoteDiscription>영상에 참고용 자료로 들어갈 예정이에요!</St.VoteDiscription>
       <St.VoterCount>4.5천 명</St.VoterCount>
       <St.OptionListContainer>
-        {candidateArr.map((candidate) => {
+        {candidateArr.map((candidate, i) => {
           return (
-            <St.OptionContentWrapper isactive={isVoted} key={candidate.id} onClick={() => showResult(candidate.id)}>
+            <St.OptionContentWrapper
+              isactive={isVoted && i === currentCandidate}
+              key={candidate.id}
+              onClick={() => showResult(candidate.id)}>
               <St.OptionListContent>
                 <St.OptionListMark>○</St.OptionListMark>
                 <St.OptionListText>{candidate.name}</St.OptionListText>
