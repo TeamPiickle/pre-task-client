@@ -64,6 +64,15 @@ export default function Swipe() {
     <StWrapper>
       <AnimatePresence custom={direction}>
         <StBox
+          whileTap={{ scale: 0.8 }}
+          drag="x"
+          dragSnapToOrigin
+          onDragEnd={(e, info) => {
+            console.log(info.velocity.y);
+            if (info.offset.x < -100 && info.velocity.x < -100) nextPlease();
+            else if (info.offset.x > 100 && info.velocity.x > 100) prevPlease();
+            else if (info.velocity.y < -20) upPlease();
+          }}
           custom={direction}
           variants={boxVariants}
           initial="invisible"
@@ -118,6 +127,8 @@ const StBtnWrapper = styled.div`
   top: 60%;
   display: flex;
   gap: 20px;
+
+  width: 100%;
 `;
 
 const StBtn = styled.button`
