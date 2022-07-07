@@ -19,6 +19,7 @@ export default function Survey() {
   );
   const [voterSum, setVoterSum] = useState(sumOfVoter); // 투표자 전체수
   const [isVoted, setIsVoted] = useState(false); // 투표 여부
+  const [currentCandidate, setCurrentCandidate] = useState(0); // 현재 클릭했던 보기의 index를 기억
 
   return (
     <St.Survey>
@@ -34,6 +35,8 @@ export default function Survey() {
             setVoterSum={setVoterSum}
             isVoted={isVoted}
             setIsVoted={setIsVoted}
+            currentCandidate={currentCandidate}
+            setCurrentCandidate={setCurrentCandidate}
             key={girl.id}
           />
         );

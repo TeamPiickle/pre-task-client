@@ -14,12 +14,13 @@ interface OptionProps {
   setVoterSum: React.Dispatch<React.SetStateAction<number>>;
   isVoted: boolean;
   setIsVoted: React.Dispatch<React.SetStateAction<boolean>>;
+  currentCandidate: number;
+  setCurrentCandidate: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export default function Option(props: OptionProps) {
-  const { id, name, votedNumber, voterSum, setVoterSum, isVoted, setIsVoted } = props;
-
-  const [currentCandidate, setCurrentCandidate] = useState(0); // 현재 클릭했던 보기의 index를 기억
+  const { id, name, votedNumber, voterSum, setVoterSum, isVoted, setIsVoted, currentCandidate, setCurrentCandidate } =
+    props;
   const [votedNum, setVotedNum] = useState(girls); // 선지를 담은 객체 배열
 
   const showResult = (key: number) => {
@@ -48,7 +49,6 @@ export default function Option(props: OptionProps) {
         tempCandidate[currentCandidate].votedNumber -= 1;
         tempCandidate[key].votedNumber += 1;
         setVotedNum(tempCandidate);
-
         setCurrentCandidate(key);
       }
     }
