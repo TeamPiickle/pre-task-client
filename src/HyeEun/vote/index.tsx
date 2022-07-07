@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 import SarangHyeeun from "../../asset/images/SarangHyeeun.png";
+import theme from "../../style";
 import ActionButtons from "./components/ActionButtons";
 import Header from "./components/Header";
 import Survey from "./components/Survey";
-import theme from "./style";
-
-export default function index() {
+export default function Vote() {
   return (
     <St.Root>
       <St.ProfileWrapper>

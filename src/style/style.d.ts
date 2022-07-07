@@ -16,5 +16,6 @@ declare module "styled-components" {
       black: string;
     };
     center: string;
+    button: string;
   }
 }

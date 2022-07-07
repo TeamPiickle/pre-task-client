@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import theme from "../../style";
+import theme from "../../../../style";
 
 type ActionButtonProps = {
   children: string;
