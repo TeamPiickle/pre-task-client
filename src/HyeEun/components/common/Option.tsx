@@ -61,8 +61,8 @@ export default function Option(props: OptionProps) {
 
       <St.OptionListContent isactive={isVoted && id === currentCandidate}>
         <St.VotedPercentBox
-          isactive={isVoted}
-          ispicked={isVoted && id === currentCandidate}
+          isactive={isVoted && id === currentCandidate}
+          ispicked={isVoted}
           votedPercent={votedPercent}></St.VotedPercentBox>
         <St.OptionListContentWrapper>
           <St.OptionListText>{name}</St.OptionListText>
@@ -93,6 +93,7 @@ const St = {
 
   OptionListContent: styled.article<{ isactive: boolean }>`
     display: flex;
+    position: relative;
 
     border: 1px solid ${({ isactive }) => (isactive ? "#065fd4" : "#606060")};
 
@@ -107,15 +108,18 @@ const St = {
     cursor: pointer;
   `,
 
-  VotedPercentBox: styled.span<{ isactive: boolean; votedPercent: number; ispicked: boolean }>`
-    width: ${({ isactive, votedPercent }) => (isactive ? votedPercent : 0)}%;
-    background-color: ${({ ispicked }) => (ispicked ? "skyblue" : "#d8d8d8")};
+  VotedPercentBox: styled.div<{ isactive: boolean; votedPercent: number; ispicked: boolean }>`
+    width: ${({ ispicked, votedPercent }) => (ispicked ? votedPercent : 0)}%;
+    height: 100%;
+    background-color: ${({ isactive }) => (isactive ? "skyblue" : "#d8d8d8")};
+    position: absolute;
   `,
 
-  OptionListContentWrapper: styled.span`
+  OptionListContentWrapper: styled.div`
     margin: 1rem;
     display: flex;
     gap: 0.8rem;
+    z-index: 99;
   `,
 
   OptionListText: styled.p``,
