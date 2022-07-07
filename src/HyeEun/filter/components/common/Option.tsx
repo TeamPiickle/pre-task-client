@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import checked from "../../../asset/icons/checked.png";
-import unchecked from "../../../asset/icons/unchecked.png";
+import checked from "../../../../asset/icons/checked.png";
+import unchecked from "../../../../asset/icons/unchecked.png";
 import girls from "../../core/girls";
 import theme from "../../style";
 
