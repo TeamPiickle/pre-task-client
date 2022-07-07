@@ -1,11 +1,12 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 export default function index() {
   return (
     <div>
-      <a href="/he/1">vote</a>
+      <Link to="/he/1">1. 암온어 vote</Link>
       <br />
-      <a href="/he/2">filter</a>
+      <br />
+      <Link to="/he/2">2. 정수기 filter 갈기</Link>
     </div>
   );
 }
