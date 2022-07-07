@@ -24,12 +24,14 @@ export default function index() {
 const St = {
   Root: styled.div`
     font-size: 62.5%;
-    width: 85.2rem;
+
     height: auto;
     background-color: ${theme.colors.gray1};
     border: 1px solid ${theme.colors.gray2};
     padding: 1.2rem 1.6rem;
     display: flex;
+    box-sizing: border-box;
+    width: 100%;
   `,
 
   ProfileWrapper: styled.span``,
@@ -39,5 +41,7 @@ const St = {
     background-color: white;
     margin-right: 1.6rem;
   `,
-  MainWrapper: styled.main``,
+  MainWrapper: styled.main`
+    width: 100%;
+  `,
 };

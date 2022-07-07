@@ -1,9 +1,9 @@
 const girls = [
-  { id: "g1", girlName: "유인짱", votersNum: 200 },
-  { id: "g2", girlName: "전지현", votersNum: 121 },
-  { id: "g3", girlName: "카리나", votersNum: 50 },
-  { id: "g4", girlName: "김혜수", votersNum: 30 },
-  { id: "g5", girlName: "한소희", votersNum: 20 },
+  { id: 1, name: "유인짱", votedNumber: 200 },
+  { id: 2, name: "전지현", votedNumber: 121 },
+  { id: 3, name: "카리나", votedNumber: 50 },
+  { id: 4, name: "김혜수", votedNumber: 30 },
+  { id: 5, name: "한소희", votedNumber: 20 },
 ];
 
 export default girls;
