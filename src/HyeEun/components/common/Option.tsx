@@ -12,13 +12,16 @@ interface OptionProps {
   votedNumber: number;
   voterSum: number;
   setVoterSum: React.Dispatch<React.SetStateAction<number>>;
+  isVoted: boolean;
+  setIsVoted: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function Option(props: OptionProps) {
-  const { id, name, votedNumber, voterSum, setVoterSum } = props;
-  const [isVoted, setIsVoted] = useState(false); // 투표 여부
+  const { id, name, votedNumber, voterSum, setVoterSum, isVoted, setIsVoted } = props;
+
   const [currentCandidate, setCurrentCandidate] = useState(0); // 현재 클릭했던 보기의 index를 기억
   const [votedNum, setVotedNum] = useState(girls); // 선지를 담은 객체 배열
+  const [isPicked, setIsPicked] = useState(false); // 투표 여부
 
   const showResult = (key: number) => {
     // isVoted가 false일 때 클릭 해당 보기의 전체 투표자수에 +1, 다음 클릭을 위해 현재 클릳괸 index를 기억
@@ -28,6 +31,7 @@ export default function Option(props: OptionProps) {
       setVotedNum(tempCandidate);
       setVoterSum(voterSum + 1);
       setIsVoted(true);
+      setIsPicked(true);
       setCurrentCandidate(key);
     }
     // isVoted가 true일 때,
@@ -38,6 +42,7 @@ export default function Option(props: OptionProps) {
         tempCandidate[key].votedNumber -= 1;
         setVotedNum(tempCandidate);
         setIsVoted(false);
+        setIsPicked(false);
         setVoterSum(voterSum - 1);
       }
       // 방금 클릭했던 것과 다른 걸 클릭한다면 방금 클릭했던 보기에 -1, 현재 클릭한 보기에 +1
@@ -53,8 +58,8 @@ export default function Option(props: OptionProps) {
 
   return (
     <St.OptionContentWrapper onClick={() => showResult(id)}>
-      <St.OptionListMark isactive={isVoted}></St.OptionListMark>
-      <St.OptionListContent isactive={isVoted}>
+      <St.OptionListMark isactive={isPicked}></St.OptionListMark>
+      <St.OptionListContent isactive={isPicked}>
         <St.OptionListText>{name}</St.OptionListText>
         {isVoted === true && <St.VotedPercent>{Math.floor((votedNumber / voterSum) * 100)}%</St.VotedPercent>}
       </St.OptionListContent>
