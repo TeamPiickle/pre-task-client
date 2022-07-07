@@ -51,6 +51,7 @@ export default function Option(props: OptionProps) {
         tempCandidate[currentCandidate].votedNumber -= 1;
         tempCandidate[key].votedNumber += 1;
         setVotedNum(tempCandidate);
+        setIsPicked(true);
         setCurrentCandidate(key);
       }
     }
