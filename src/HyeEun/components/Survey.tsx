@@ -18,7 +18,6 @@ export default function Survey() {
     0,
   );
   const [voterSum, setVoterSum] = useState(sumOfVoter); // 투표자 전체수
-  const [isVoted, setIsVoted] = useState(false); // 투표 여부
 
   return (
     <St.Survey>
@@ -32,8 +31,6 @@ export default function Survey() {
             votedNumber={girl.votedNumber}
             voterSum={voterSum}
             setVoterSum={setVoterSum}
-            isVoted={isVoted}
-            setIsVoted={setIsVoted}
             key={girl.id}
           />
         );
