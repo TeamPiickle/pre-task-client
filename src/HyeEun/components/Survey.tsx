@@ -24,23 +24,24 @@ export default function Survey() {
   return (
     <St.Survey>
       <St.Total>{voterSum}명 투표</St.Total>
-
-      {girls.map((girl: Girl) => {
-        return (
-          <Option
-            id={girl.id}
-            name={girl.name}
-            votedNumber={girl.votedNumber}
-            voterSum={voterSum}
-            setVoterSum={setVoterSum}
-            isVoted={isVoted}
-            setIsVoted={setIsVoted}
-            currentCandidate={currentCandidate}
-            setCurrentCandidate={setCurrentCandidate}
-            key={girl.id}
-          />
-        );
-      })}
+      <St.OptionContainer>
+        {girls.map((girl: Girl) => {
+          return (
+            <Option
+              id={girl.id}
+              name={girl.name}
+              votedNumber={girl.votedNumber}
+              voterSum={voterSum}
+              setVoterSum={setVoterSum}
+              isVoted={isVoted}
+              setIsVoted={setIsVoted}
+              currentCandidate={currentCandidate}
+              setCurrentCandidate={setCurrentCandidate}
+              key={girl.id}
+            />
+          );
+        })}
+      </St.OptionContainer>
     </St.Survey>
   );
 }
@@ -54,4 +55,5 @@ const St = {
   Total: styled.p`
     margin: 1.2rem 0;
   `,
+  OptionContainer: styled.ul``,
 };

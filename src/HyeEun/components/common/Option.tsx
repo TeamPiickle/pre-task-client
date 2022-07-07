@@ -22,6 +22,7 @@ export default function Option(props: OptionProps) {
   const { id, name, votedNumber, voterSum, setVoterSum, isVoted, setIsVoted, currentCandidate, setCurrentCandidate } =
     props;
   const [votedNum, setVotedNum] = useState(girls); // 선지를 담은 객체 배열
+  const votedPercent = Math.floor((votedNumber / voterSum) * 100); // 투표비율 계산
 
   const showResult = (key: number) => {
     // isVoted가 false일 때 클릭 해당 보기의 전체 투표자수에 +1, 다음 클릭을 위해 현재 클릳괸 index를 기억
@@ -55,22 +56,31 @@ export default function Option(props: OptionProps) {
   };
 
   return (
-    <St.OptionContentWrapper onClick={() => showResult(id)}>
+    <St.OptionList onClick={() => showResult(id)}>
       <St.OptionListMark isactive={isVoted && id === currentCandidate}></St.OptionListMark>
+
       <St.OptionListContent isactive={isVoted && id === currentCandidate}>
-        <St.OptionListText>{name}</St.OptionListText>
-        {isVoted === true && <St.VotedPercent>{Math.floor((votedNumber / voterSum) * 100)}%</St.VotedPercent>}
+        <St.VotedPercentBox
+          isactive={isVoted}
+          ispicked={isVoted && id === currentCandidate}
+          votedPercent={votedPercent}></St.VotedPercentBox>
+        <St.OptionListContentWrapper>
+          <St.OptionListText>{name}</St.OptionListText>
+          {isVoted === true && <St.VotedPercent>{votedPercent}%</St.VotedPercent>}
+        </St.OptionListContentWrapper>
       </St.OptionListContent>
-    </St.OptionContentWrapper>
+    </St.OptionList>
   );
 }
 
 const St = {
-  OptionContentWrapper: styled.article`
+  OptionList: styled.li`
     display: flex;
     align-items: center;
     gap: 0.2rem;
+    width: 100%;
   `,
+
   OptionListMark: styled.span<{ isactive: boolean }>`
     width: 2rem;
     height: 2rem;
@@ -81,36 +91,33 @@ const St = {
     cursor: pointer;
   `,
 
-  OptionListContent: styled.span<{ isactive: boolean }>`
+  OptionListContent: styled.article<{ isactive: boolean }>`
     display: flex;
-    gap: 0.8rem;
-    border: 1px solid ${theme.colors.gray3};
+
+    border: 1px solid ${({ isactive }) => (isactive ? "#065fd4" : "#606060")};
+
     border-radius: 0.4rem;
     width: 100%;
-    padding: 1rem;
+
     margin-bottom: 0.5rem;
 
     ${theme.fonts.large}
     color: ${theme.colors.black};
-    background-color: ${({ isactive }) => (isactive ? "skyblue" : "transparent")};
 
     cursor: pointer;
   `,
 
-  OptionListText: styled.p``,
-  VotedPercent: styled.p``,
-
-  Label: styled.label`
-    input:checked + label span {
-      background: url(${checked});
-    }
-
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 69.6rem;
-    height: 3.8rem;
+  VotedPercentBox: styled.span<{ isactive: boolean; votedPercent: number; ispicked: boolean }>`
+    width: ${({ isactive, votedPercent }) => (isactive ? votedPercent : 0)}%;
+    background-color: ${({ ispicked }) => (ispicked ? "skyblue" : "#d8d8d8")};
   `,
 
-  Infomation: styled.div``,
+  OptionListContentWrapper: styled.span`
+    margin: 1rem;
+    display: flex;
+    gap: 0.8rem;
+  `,
+
+  OptionListText: styled.p``,
+  VotedPercent: styled.p``,
 };
