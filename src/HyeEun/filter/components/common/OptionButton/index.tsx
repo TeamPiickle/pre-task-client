@@ -14,13 +14,9 @@ export default function OptionButton(props: OptionbuttonProps) {
 
   const handleClick = (content: string) => {
     setIsClicked(!isClicked);
-    // submitSet에 content가 있으면 submitSet에서 삭제
-    if (submitSet.has(content)) {
-      setSubmitSet((prev) => new Set([...prev].filter((x) => x !== content)));
-    } // submitSet에 content가 없으면 submitSet에서 추가
-    else {
-      setSubmitSet((prev) => new Set(prev.add(content)));
-    }
+    // submitSet에 content가 있으면 submitSet에서 삭제, 아니면 추가
+    const tempSubmitSet = new Set([...submitSet]);
+    tempSubmitSet.has(content) ? tempSubmitSet.delete(content) : tempSubmitSet.add(content);
   };
 
   return (
