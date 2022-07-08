@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import OptionButton from "../OptionButton";
 import { St } from "./style";
 
