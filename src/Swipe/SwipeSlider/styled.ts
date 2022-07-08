@@ -12,11 +12,11 @@ export const St = {
     margin-top: 11.5rem;
   `,
 
-  SwiperSlide: styled(SwiperSlide)`
+  SwiperSlideInner: styled.div`
     width: 27rem;
     height: 33.8rem;
 
-    background-color: #e5e5e5;
+    background-color: #e5e5e5 !important;
     background: rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(1rem);
 
