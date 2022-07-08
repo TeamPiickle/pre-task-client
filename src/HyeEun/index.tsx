@@ -7,6 +7,9 @@ export default function index() {
       <br />
       <br />
       <Link to="/he/2">2. 정수기 filter 갈기</Link>
+      <br />
+      <br />
+      <Link to="/he/3">2. 아기자기 web에게 letter 쓰기</Link>
     </div>
   );
 }
