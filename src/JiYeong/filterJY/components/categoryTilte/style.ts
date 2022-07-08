@@ -7,14 +7,19 @@ export const St = {
 
   ContentsContainerWrapper: styled.section`
     width: 50%;
+
     display: flex;
     justify-content: space-around;
   `,
 
-  ContentsContainer: styled.article`
+  ContentsContainer: styled.article<{ isActive: boolean }>`
     border: solid 2px black;
     border-radius: 20px;
+
     padding: 10px;
+
+    background-color: ${({ isActive }) => (isActive ? "black" : "white")};
+    color: ${({ isActive }) => (isActive ? "white" : "black")};
   `,
 
   ContentsText: styled.strong`
@@ -24,8 +29,11 @@ export const St = {
   SubmitBtn: styled.button`
     background-color: black;
     color: white;
+
     font-size: 20px;
+
     border-radius: 20px;
+
     margin: 50px auto auto 230px;
     padding: 10px 10px;
   `,
