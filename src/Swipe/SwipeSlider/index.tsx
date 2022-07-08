@@ -10,7 +10,7 @@ import { St } from "./styled";
 export default function SwipeSlider() {
   return (
     <St.Root>
-      <Swiper slidesPerView={"auto"} spaceBetween={21} centeredSlides={true} grabCursor={true}>
+      <Swiper slidesPerView={"auto"} spaceBetween={44} centeredSlides={true} grabCursor={true}>
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>

@@ -22,14 +22,7 @@
   border-radius: 1.4rem;
 }
 
-.swiper-slide.swiper-slide-prev {
-  width: 19.95rem !important;
-}
-
 .swiper-slide.swiper-slide-active {
-  width: 27rem;
-  height: 39.5rem;
-
-
-  transition: 0.5s !important;
+  transform: scale(1.2);
+  transition: 0.5s ;
 }
