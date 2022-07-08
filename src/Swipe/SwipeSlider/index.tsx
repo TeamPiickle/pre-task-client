@@ -1,54 +1,41 @@
 /* eslint-disable import/no-unresolved */
 // swiper js v7 이상의 에러
-import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/swiper.min.css";
+import "swiper/components/navigation/navigation.min.css";
 
+import { useState } from "react";
 // import "./styles.css";
-import { Pagination } from "swiper";
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { St } from "./styled";
 
 export default function SwipeSlider() {
+  const [swiper, setSwiper] = useState<any>(null);
+  const [idx, setIdx] = useState(0);
+
+  // SwiperCore.use([Navigation]);
+
+  // const swiperParams = {
+  //   navigation: true,
+  //   onSwiper: setSwiper,
+  //   onSlideChange: (e: any) => setIdx(e.activeIndex),
+  // };
+
   return (
-    <div>
-      <St.Swiper
-        slidesPerView="auto"
-        spaceBetween={30}
-        centeredSlides={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper">
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 1</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 2</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 3</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 4</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 5</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 6</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 7</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 8</St.SwiperSlide>
-        </SwiperSlide>
-        <SwiperSlide>
-          <St.SwiperSlide>Slide 9</St.SwiperSlide>
-        </SwiperSlide>
-      </St.Swiper>
-    </div>
+    <St.Root>
+      s
+      {/* <Swiper {...swiperParams}>
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper> */}
+    </St.Root>
   );
 }
