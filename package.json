@@ -18,6 +18,7 @@
     "@types/react-dom": "^18.0.0",
     "@types/styled-components": "^5.1.25",
     "axios": "^0.26.0",
+    "framer-motion": "^6.4.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.2.1",
@@ -66,9 +67,9 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "lint-staged": "^12.3.7",
+    "msw": "^0.42.1",
     "prettier": "^2.6.0",
-    "webpack": "^5.72.0",
-    "msw": "^0.42.1"
+    "webpack": "^5.72.0"
   },
   "msw": {
     "workerDirectory": "public"
