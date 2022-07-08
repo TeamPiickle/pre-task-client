@@ -3,10 +3,22 @@ import { St } from "./style";
 interface ChoiceProps {
   name: string;
   contents: string[];
+  submitSet: Set<string>;
+  setSubmitSet: React.Dispatch<React.SetStateAction<Set<string>>>;
 }
 
 export default function Choice(props: ChoiceProps) {
-  const { name, contents } = props;
+  const { name, contents, submitSet, setSubmitSet } = props;
+
+  const handleClick = (content: string) => {
+    // submitSet에 content가 있으면 submitSet에서 삭제
+    if (submitSet.has(content)) {
+      setSubmitSet((prev) => new Set([...prev].filter((x) => x !== content)));
+    } // submitSet에 content가 없으면 submitSet에서 추가
+    else {
+      setSubmitSet((prev) => new Set(prev.add(content)));
+    }
+  };
 
   return (
     <St.OptionWrapper>
@@ -14,7 +26,7 @@ export default function Choice(props: ChoiceProps) {
       <St.OptionButtonWrapper>
         {contents.map((content, id) => {
           return (
-            <St.OptionButton type="button" key={id}>
+            <St.OptionButton type="button" key={id} onClick={() => handleClick(content)}>
               {content}
             </St.OptionButton>
           );

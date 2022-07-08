@@ -11,5 +11,6 @@ export const St = {
 
   SubmitButton: styled.button`
     ${theme.button}
+    margin: 0.5rem;
   `,
 };
