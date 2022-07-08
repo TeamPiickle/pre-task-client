@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { St } from "./style";
 
 interface ChoiceProps {
@@ -9,8 +11,10 @@ interface ChoiceProps {
 
 export default function Choice(props: ChoiceProps) {
   const { name, contents, submitSet, setSubmitSet } = props;
+  const [isclicked, setIsClicked] = useState(false);
 
   const handleClick = (content: string) => {
+    setIsClicked(!isclicked);
     // submitSet에 content가 있으면 submitSet에서 삭제
     if (submitSet.has(content)) {
       setSubmitSet((prev) => new Set([...prev].filter((x) => x !== content)));
@@ -23,15 +27,15 @@ export default function Choice(props: ChoiceProps) {
   return (
     <St.OptionWrapper>
       <St.OptionName>{name}</St.OptionName>
-      <St.OptionButtonWrapper>
-        {contents.map((content, id) => {
-          return (
-            <St.OptionButton type="button" key={id} onClick={() => handleClick(content)}>
-              {content}
-            </St.OptionButton>
-          );
-        })}
-      </St.OptionButtonWrapper>
+      {/* <St.OptionButtonWrapper> */}
+      {contents.map((content, id) => {
+        return (
+          <St.OptionButton isactive={isclicked} type="button" key={id} onClick={() => handleClick(content)}>
+            {content}
+          </St.OptionButton>
+        );
+      })}
+      {/* </St.OptionButtonWrapper> */}
     </St.OptionWrapper>
   );
 }

@@ -13,7 +13,8 @@ export const St = {
     padding: 0.5rem;
   `,
 
-  OptionButton: styled.button`
+  OptionButton: styled.button<{ isactive: boolean }>`
     border: 1px solid lightgrey;
+    background-color: ${({ isactive }) => (isactive ? "#afafaf" : "transparent")};
   `,
 };

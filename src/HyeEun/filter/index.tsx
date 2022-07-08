@@ -31,7 +31,7 @@ export default function Filter() {
           />
         );
       })}
-      <St.SubmitButton type="submit" onClick={() => handleSubmit()}>
+      <St.SubmitButton type="submit" onClick={handleSubmit}>
         제출하기
       </St.SubmitButton>
     </St.Root>
