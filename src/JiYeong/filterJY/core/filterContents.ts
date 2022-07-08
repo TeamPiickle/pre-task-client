@@ -1,3 +1,5 @@
+// 필터의 태그들을 담은 객체 배열
+
 export const filterContentsArr: { id: number; title: string; contents: string[] }[] = [
   {
     id: 0,
