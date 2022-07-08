@@ -1,3 +1,10 @@
+import MultipleSlide from "./components/multiple";
+import { St } from "./style";
+
 export default function index() {
-  return <div>index</div>;
+  return (
+    <St.Section>
+      <MultipleSlide />
+    </St.Section>
+  );
 }
