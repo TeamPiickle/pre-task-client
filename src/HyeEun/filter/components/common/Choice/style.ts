@@ -12,9 +12,4 @@ export const St = {
     gap: 0.5rem;
     padding: 0.5rem;
   `,
-
-  OptionButton: styled.button<{ isactive: boolean }>`
-    border: 1px solid lightgrey;
-    background-color: ${({ isactive }) => (isactive ? "#afafaf" : "transparent")};
-  `,
 };
