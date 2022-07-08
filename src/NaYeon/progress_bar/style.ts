@@ -50,6 +50,8 @@ export const St = {
   `,
 
   Image: styled.img`
+    margin: auto;
+
     object-fit: cover;
     height: 450px;
     width: 50%;
