@@ -34,27 +34,27 @@ export default function Swipe() {
   const boxVariants = {
     invisible: (direction: { back: boolean; up: boolean }) => {
       return {
-        x: direction.back ? -500 : 500,
+        x: direction.back ? -500 : 0,
         opacity: 0,
-        scale: 0,
+        // scale: 1,
       };
     },
     visible: {
       x: 0,
       y: 0,
       opacity: 1,
-      scale: 1,
+      // scale: 1,
       transition: {
         duration: 0.4,
       },
     },
     exit: (direction: { back: boolean; up: boolean }) => {
-      const upOrBack = direction.up ? { y: -500 } : { x: direction.back ? 500 : -500 };
+      const upOrBack = direction.up ? { y: -500 } : { x: direction.back ? 0 : -500 };
 
       return {
         ...upOrBack,
-        opacity: 0,
-        scale: 0,
+        opacity: direction.back ? 1 : 0,
+        // scale: 0,
         transition: { duration: 0.4 },
       };
     },
@@ -66,12 +66,13 @@ export default function Swipe() {
         <StBox
           whileTap={{ scale: 0.8 }}
           drag="x"
-          dragSnapToOrigin
-          onDragEnd={(e, info) => {
+          // dragSnapToOrigin
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={(_e, info) => {
             console.log(info.velocity.y);
             if (info.offset.x < -100 && info.velocity.x < -100) nextPlease();
             else if (info.offset.x > 100 && info.velocity.x > 100) prevPlease();
-            else if (info.velocity.y < -20) upPlease();
+            else if (info.velocity.y < -10) upPlease();
           }}
           custom={direction}
           variants={boxVariants}
@@ -106,7 +107,7 @@ const StWrapper = styled.div`
 `;
 
 const StBox = styled(motion.div)`
-  width: 400px;
+  width: 250px;
   height: 200px;
 
   position: absolute;
