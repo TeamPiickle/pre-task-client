@@ -9,8 +9,8 @@
 
 /* eslint-disable import/no-unresolved */
 // swiper js v7 이상의 에러
-import "swiper/css";
-import "./styles.css";
+import "swiper/scss";
+import "./styles.scss";
 
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
