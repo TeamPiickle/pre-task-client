@@ -7,7 +7,7 @@ import JiYeong from "./JiYeong";
 import Main from "./Main";
 import NaYeon from "./NaYeon";
 import NaYeon_1 from "./NaYeon/image_slider";
-import NaYeon_2 from "./NaYeon/progress_bar";
+import NaYeon_2 from "./NaYeon/slider_bar";
 
 export default function Router() {
   return (
