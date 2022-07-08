@@ -12,6 +12,8 @@ export default function index() {
       <Link to="/filter">필터 예시 페이지 </Link>
       <br />
       <Link to="/swipe">스와이프 예시 페이지 </Link>
+      <br />
+      <Link to="/swipe-slider">스와이프 슬라이더 예시 페이지 </Link>
     </div>
   );
 }
