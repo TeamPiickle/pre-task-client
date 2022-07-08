@@ -1,15 +1,19 @@
 /* eslint-disable import/no-unresolved */
+// swiper js v7 이상의 에러
 import "swiper/css";
 import "swiper/css/pagination";
 
+// import "./styles.css";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import { St } from "./styled";
 
 export default function SwipeSlider() {
   return (
     <div>
-      <Swiper
-        slidesPerView={4}
+      <St.Swiper
+        slidesPerView="auto"
         spaceBetween={30}
         centeredSlides={true}
         pagination={{
@@ -17,16 +21,34 @@ export default function SwipeSlider() {
         }}
         modules={[Pagination]}
         className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 1</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 2</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 3</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 4</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 5</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 6</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 7</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 8</St.SwiperSlide>
+        </SwiperSlide>
+        <SwiperSlide>
+          <St.SwiperSlide>Slide 9</St.SwiperSlide>
+        </SwiperSlide>
+      </St.Swiper>
     </div>
   );
 }
