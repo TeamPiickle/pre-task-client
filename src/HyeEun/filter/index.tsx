@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Choice from "./components/common/Choice";
+import OptionButton from "./components/common/OptionButton";
 import optionList from "./core/optionList";
 import { St } from "./style";
 
@@ -22,13 +22,14 @@ export default function Filter() {
     <St.Root>
       {optionList.map((option: Option) => {
         return (
-          <Choice
-            key={option.id}
-            name={option.name}
-            contents={option.contents}
-            submitSet={submitSet}
-            setSubmitSet={setSubmitSet}
-          />
+          <St.OptionWrapper key={option.id}>
+            <St.OptionName>{option.name}</St.OptionName>
+            <St.OptionButtonWrapper>
+              {option.contents.map((content, id) => {
+                return <OptionButton key={id} content={content} submitSet={submitSet} setSubmitSet={setSubmitSet} />;
+              })}
+            </St.OptionButtonWrapper>
+          </St.OptionWrapper>
         );
       })}
       <St.SubmitButton type="submit" onClick={handleSubmit}>

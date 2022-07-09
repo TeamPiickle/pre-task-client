@@ -13,4 +13,16 @@ export const St = {
     ${theme.button}
     margin: 0.5rem;
   `,
+
+  OptionWrapper: styled.section``,
+
+  OptionName: styled.article`
+    font-size: 3rem;
+  `,
+
+  OptionButtonWrapper: styled.div`
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  `,
 };
