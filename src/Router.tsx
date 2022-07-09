@@ -9,6 +9,8 @@ import Hyeeun_3 from "./Hyeeun/web-letter";
 import JiYeong from "./JiYeong";
 import Main from "./Main";
 import NaYeon from "./NaYeon";
+import NaYeon_1 from "./NaYeon/ImageSlider";
+import NaYeon_2 from "./NaYeon/SliderBar";
 import Swipe from "./Swipe";
 
 export default function Router() {
@@ -22,6 +24,8 @@ export default function Router() {
         <Route path="/he/3" element={<HyeEun_3 />} />
         <Route path="/jy" element={<JiYeong />} />
         <Route path="/ny" element={<NaYeon />} />
+        <Route path="/ny/1" element={<NaYeon_1 />} />
+        <Route path="/ny/2" element={<NaYeon_2 />} />
         <Route path="/filter" element={<Filter />} />
         <Route path="/swipe" element={<Swipe />} />
         <Route path="*" element={<Error404 />} />
