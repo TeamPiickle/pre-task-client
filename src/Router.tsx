@@ -6,6 +6,7 @@ import HyeEun from "./HyeEun";
 import HyeEun_2 from "./HyeEun/filter";
 import HyeEun_1 from "./HyeEun/vote";
 import HyeEun_3 from "./HyeEun/web-letter";
+import HyeEun_3_ from "./HyeEun/web-letter/pages";
 import JiYeong from "./JiYeong";
 import Main from "./Main";
 import NaYeon from "./NaYeon";
@@ -20,6 +21,8 @@ export default function Router() {
         <Route path="/he/1" element={<HyeEun_1 />} />
         <Route path="/he/2" element={<HyeEun_2 />} />
         <Route path="/he/3" element={<HyeEun_3 />} />
+        <Route path="/he/3/write" element={<HyeEun_3_.Write />} />
+        <Route path="/he/3/edit" element={<HyeEun_3_.Edit />} />
         <Route path="/jy" element={<JiYeong />} />
         <Route path="/ny" element={<NaYeon />} />
         <Route path="/filter" element={<Filter />} />
