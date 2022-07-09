@@ -5,7 +5,7 @@ import Filter from "./Filter";
 import HyeEun from "./HyeEun";
 import HyeEun_2 from "./HyeEun/filter";
 import HyeEun_1 from "./HyeEun/vote";
-import Hyeeun_3 from "./Hyeeun/web-letter";
+import HyeEun_3 from "./HyeEun/web-letter";
 import JiYeong from "./JiYeong";
 import Main from "./Main";
 import NaYeon from "./NaYeon";
