@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
 export const St = {
-  Section: styled.section`
-    height: 100vh;
-    background-color: black;
-  `,
-
   MultipleSlider: styled.section`
     text-align: center;
     padding: 0 4rem;
