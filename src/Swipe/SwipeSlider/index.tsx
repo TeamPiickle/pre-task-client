@@ -12,20 +12,39 @@
 import "swiper/scss";
 import "./styles.scss";
 
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useRef, useState } from "react";
+import SwiperType from "swiper";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 import { St } from "./styled";
 
 export default function SwipeSlider() {
+  const [swiperRef, setSwiperRef] = useState<SwiperType>();
+
+  useEffect(() => {
+    console.log(swiperRef);
+
+    // swiperRef?.slideNext();
+  }, [swiperRef]);
+
   return (
     <St.Root>
-      <Swiper slidesPerView={"auto"} spaceBetween={44} centeredSlides={true} grabCursor={true}>
+      <button type="button" onClick={() => swiperRef?.slideNext()}>
+        sad
+      </button>
+      <Swiper
+        // speed={300}
+        onSwiper={setSwiperRef}
+        onClick={() => console.log("sfd")}
+        slidesPerView={"auto"}
+        spaceBetween={44}
+        centeredSlides={true}
+        grabCursor={true}>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((el, i) => {
-          console.log(i);
           return (
             <div key={i} aria-hidden="true" onClick={(e) => console.log(e)}>
               <SwiperSlide key={`slidee-${i}`}>
+                {/* {({ isActive }) => isActive && <div>asdf</div>} */}
                 <div key={i} aria-hidden="true" onClick={(e) => console.log(e.target)}>
                   Slide {i}
                 </div>
