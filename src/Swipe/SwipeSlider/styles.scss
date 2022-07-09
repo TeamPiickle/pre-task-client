@@ -1,0 +1,29 @@
+.swiper {
+  height: 40rem;
+
+  margin-top: 11.5rem;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 22.3rem;
+  height: 33.8rem;
+  
+  background-color: #e5e5e5;
+  backdrop-filter: blur(1rem);
+  
+  border-radius: 1.4rem;
+
+  &.swiper-slide-active {
+    transform: scale(1.2);
+    transition: 0.5s ;
+  }
+}
+

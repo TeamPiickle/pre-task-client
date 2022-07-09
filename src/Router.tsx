@@ -12,6 +12,7 @@ import NaYeon from "./NaYeon";
 import NaYeon_1 from "./NaYeon/ImageSlider";
 import NaYeon_2 from "./NaYeon/SliderBar";
 import Swipe from "./Swipe";
+import SwipeSlider from "./Swipe/SwipeSlider";
 
 export default function Router() {
   return (
@@ -28,6 +29,7 @@ export default function Router() {
         <Route path="/ny/2" element={<NaYeon_2 />} />
         <Route path="/filter" element={<Filter />} />
         <Route path="/swipe" element={<Swipe />} />
+        <Route path="/swipe-slider" element={<SwipeSlider />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </BrowserRouter>
