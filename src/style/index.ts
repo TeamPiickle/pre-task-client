@@ -18,6 +18,7 @@ const theme: DefaultTheme = {
   fonts,
   colors,
   center: "display: flex; justify-content: center; align-items: center;",
+  button: "border: 1px solid lightgrey; width: 6rem;",
 };
 
 export default theme;

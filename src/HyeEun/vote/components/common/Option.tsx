@@ -1,11 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import checked from "../../../asset/icons/checked.png";
-import unchecked from "../../../asset/icons/unchecked.png";
+import checked from "../../../../asset/icons/checked.png";
+import unchecked from "../../../../asset/icons/unchecked.png";
+import theme from "../../../../style";
 import girls from "../../core/girls";
-import theme from "../../style";
-
 interface OptionProps {
   id: number;
   name: string;

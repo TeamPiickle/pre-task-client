@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Error404 from "./Error404";
 import Filter from "./Filter";
 import HyeEun from "./HyeEun";
+import HyeEun_2 from "./HyeEun/filter";
+import HyeEun_1 from "./HyeEun/vote";
+import Hyeeun_3 from "./Hyeeun/web-letter";
 import JiYeong from "./JiYeong";
 import Main from "./Main";
 import NaYeon from "./NaYeon";
@@ -14,6 +17,9 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/he" element={<HyeEun />} />
+        <Route path="/he/1" element={<HyeEun_1 />} />
+        <Route path="/he/2" element={<HyeEun_2 />} />
+        <Route path="/he/3" element={<HyeEun_3 />} />
         <Route path="/jy" element={<JiYeong />} />
         <Route path="/ny" element={<NaYeon />} />
         <Route path="/filter" element={<Filter />} />

@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 import { reset } from "styled-reset";
 
 import App from "./App";
+import theme from "./style";
 // import { worker } from "./mocks/browser";
 
 export const GlobalStyle = createGlobalStyle`
@@ -51,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
+    <GlobalStyle theme={theme} />
     <App />
   </React.StrictMode>,
 );
