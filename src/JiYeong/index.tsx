@@ -1,13 +1,12 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import UserProfile from "./components/UserProfile";
-import VoteContents from "./components/VoteContents";
-
-export default function index() {
+export default function VoteJY() {
   return (
-    <>
-      <UserProfile></UserProfile>
-      <VoteContents></VoteContents>
-    </>
+    <div>
+      <Link to="/jy/vote">투표하쉴?</Link>
+      <br />
+      <br />
+      <Link to="/jy/filter">필터하쉴?</Link>
+    </div>
   );
 }
