@@ -16,7 +16,10 @@ import { useEffect, useRef, useState } from "react";
 import SwiperType from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
+import { IcHeart, IcStrokeHeart } from "../../asset/icons";
 import { ImgClickHeart } from "../../asset/images";
+import CustomHeart from "./CustomHeart";
+import CustomStrokeHeart from "./CustomStrokeHeart";
 import { St } from "./styled";
 
 export default function SwipeSlider() {
@@ -33,6 +36,10 @@ export default function SwipeSlider() {
       <button type="button" onClick={() => swiperRef?.slideNext()}>
         sad
       </button>
+      <div style={{ width: "2rem", height: "3rem" }}>
+        <CustomHeart />
+        <CustomStrokeHeart />
+      </div>
       <Swiper
         // speed={300}
         onSwiper={setSwiperRef}
