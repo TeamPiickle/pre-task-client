@@ -16,6 +16,7 @@ import { useEffect, useRef, useState } from "react";
 import SwiperType from "swiper";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
+import click_heart from "../../asset/images/click_heart.gif";
 import { St } from "./styled";
 
 export default function SwipeSlider() {
@@ -47,6 +48,7 @@ export default function SwipeSlider() {
                 {/* {({ isActive }) => isActive && <div>asdf</div>} */}
                 <div key={i} aria-hidden="true" onClick={(e) => console.log(e.target)}>
                   Slide {i}
+                  <img style={{ width: "3rem" }} src={click_heart} alt="하트" />
                 </div>
               </SwiperSlide>
             </div>
